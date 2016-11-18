@@ -71,3 +71,14 @@ body {
     left: 145px;
     top: -97px;
 }
+
+#circle {
+    height: 90px;
+    width: 90px;
+    border-radius: 300px;
+    background-color: black;
+    position: relative;
+    top: -384px;
+    left: 92px;
+    z-index: 2;
+}
