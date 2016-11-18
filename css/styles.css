@@ -1,0 +1,70 @@
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Whitney SSm A','Whitney SSm B',verdana,sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    padding: 0 0;
+    font-size: 16px;
+}
+
+
+.wrapper {
+    padding-top: 100px;
+}
+.content, h1 {
+    margin: 2rem auto;
+    max-width: 400px;
+}
+.content {
+    position: relative;
+}
+
+.game {
+    width: 300px;
+    height: 300px;
+    background-color: #000000; 
+    position: absolute;
+    border-radius: 310px;
+}
+
+.controls {
+    width: 120px;
+    height: 120px;
+}
+
+#control-top-left {
+    position: relative;
+    background-color: lime;
+    border-top-left-radius: 300px;
+    left: 30px;
+    top: 10px;
+}
+
+#control-bottom-left {
+    background-color: yellow;
+    border-bottom-left-radius: 300px;
+    position: relative;
+    top: -200px;
+    left: 30px;
+}
+
+#control-top-right {
+    position: relative;
+    background-color: red;
+    border-top-right-radius: 300px;
+    top: -110px;
+    left: 160px;
+}
+
+#control-bottom-right {
+    position: relative;
+    background-color: blue;
+    border-bottom-right-radius: 300px;
+    left: 160px;
+    top: -90px;
+}
