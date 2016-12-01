@@ -7,14 +7,13 @@
 body {
     font-family: 'Whitney SSm A','Whitney SSm B',verdana,sans-serif;
     font-weight: 400;
-    color: #ffffff;
     padding: 0 0;
     font-size: 16px;
 }
 
 
 .wrapper {
-    padding-top: 100px;
+    padding-top: 50px;
 }
 .content, h1 {
     margin: 2rem auto;
@@ -33,6 +32,7 @@ body {
     -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
     -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
      box-shadow:         3px 3px 5px 6px #ccc;
+     display: none;
 }
 
 .controls {
@@ -81,6 +81,48 @@ body {
     top: -384px;
     left: 92px;
     z-index: 2;
+}
+
+#num {
+    position: relative;
+    height: 30px;
+    width: 35px;
+    left: 28px;
+    top: 20px;
+    background-color: #660000;
+    text-align: center;
+    border-radius: 3px;
+    padding-top:5px;
+    color: #ffffff;
+
+}
+
+.count-label {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    left: 25px;
+    top: 8px;
+    font-size: 14px;
+    color: #ffffff;
+
+}
+
+.panel-2, .panel-3 {
+    display: none;
+}
+
+.green{
+    color: lime;
+}
+.red {
+    color: red;
+}
+.blue {
+    color: blue;
+}
+.yellow {
+    color: yellow;
 }
 
 @media only screen and (max-width: 420px) { /*iphone 6 plus */
