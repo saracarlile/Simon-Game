@@ -109,11 +109,11 @@ body {
 }
 
 .panel-2, .panel-3 {
-  /*  display: none;*/
+    display: none;
 }
 
 .panel-1 {
-    display: none;
+  /*  display: none; */
 }
 
 .green{
@@ -134,6 +134,20 @@ a:link, a:visited {
     color: #0d47a1;
 }
 
+#strict-mode-selection, #easy-mode-selection {
+    margin-left: 15px;
+}
+
+#strict-mode-selection:hover {
+    margin-left: 15px;
+    color: red;
+}
+
+#easy-mode-selection:hover {
+    color: green;
+}
+
+
 @media only screen and (max-width: 420px) { /*iphone 6 plus */
   .game{
       margin-left: 60px;
@@ -142,7 +156,7 @@ a:link, a:visited {
 
 @media only screen and (max-width: 400px) { /*iphone 6 */
   .game{
-      margin-left: 40px;
+      margin-left: 36px;
   }
 }
 
