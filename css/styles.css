@@ -150,8 +150,8 @@ a:link, a:visited {
 .start-win-panel {
     display: none;
     position: relative;
-    top: 300px;
-    left: 110px;
+    top: 320px;
+    left: 102px;
 }
 
 #startWin {
@@ -160,7 +160,7 @@ a:link, a:visited {
     height: 40px;
     width: 70px;
     padding-top: 10px;
-    padding-left: 10px;
+    padding-left: 13px;
     border-radius: 3px;
     -webkit-box-shadow: 1px 1px 2px 4px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
     -moz-box-shadow:    1px 1px 2px 4px #ccc; /* Firefox 3.5 - 3.6 */
