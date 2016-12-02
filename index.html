@@ -19,17 +19,20 @@
 <body>
     <div class="wrapper">
         <div class="content">
-            <h1 class="panel-1"><span class="green">S</span><span class="red">i</span><span class="blue">m</span><span class="yellow">o</span><span class="green">n</span>
-                <span class="red">G</span><span class="blue">a</span><span class="yellow">m</span><span class="green">e</span>   </h1>
-                <p class="panel-1">This <span class="red">Simon Game</span> is a memory game.</p>
-                <p  class="panel-1">  Follow the computer, and press the
-                    buttons to copy the sequence it presents.</p><p class="panel-1"> A count will be kept of the number of sequences you copy.  You <span class="red">win</span> if your count reaches 20.</p>
-                <p  class="panel-1"><a href="#">Next >>> </a></p>
-                <p class="panel-2">You can play using <span class="blue">Easy Mode</span> or <span class="red">Strict Mode</span>.</p><p class="panel-2">  In strict mode, if you press a wrong button in the sequence
-                    the game restarts and your count is set to zero.</p>
-                <p class="panel-2"> In easy mode, the count is not reset if you get part of the sequence wrong, and you are able to try again.</p>
-                <p id="easyOrStrictPanel" class="panel-2">Choose your mode:  <a id="easy-mode-selection" href="#">Easy</a>    <a id="strict-mode-selection" href="#">Strict</a></p>
-            <div class="game" id="start">START</div>
+            <h1 class="panel-1"><span class="green">S</span><span class="red">i</span><span class="blue">m</span><span class="yellow">o</span>
+                <span
+                    class="green">n</span>
+                    <span class="red">G</span><span class="blue">a</span><span class="yellow">m</span><span class="green">e</span>                    </h1>
+            <p class="panel-1">This <span class="red">Simon Game</span> is a memory game.</p>
+            <p class="panel-1"> Follow the computer, and press the buttons to copy the sequence it presents.</p>
+            <p class="panel-1"> A count will be kept of the number of sequences you copy. You <span class="red">win</span> if your count reaches
+                20.</p>
+            <p class="panel-1"><a href="#">Next >>> </a></p>
+            <p class="panel-2">You can play using <span class="blue">Easy Mode</span> or <span class="red">Strict Mode</span>.</p>
+            <p class="panel-2">
+            In strict mode, if you press a wrong button in the sequence the game restarts and your count is set to zero.</p>
+            <p class="panel-2"> In easy mode, the count is not reset if you get part of the sequence wrong, and you are able to try again.</p>
+            <p id="easyOrStrictPanel" class="panel-2">Choose your mode: <a id="easy-mode-selection" href="#">Easy</a> <a id="strict-mode-selection" href="#">Strict</a></p>
 
             <div class="game">
                 <div class="controls" id="control-top-left">
@@ -57,11 +60,14 @@
                 </div>
 
                 <div id="circle">
-                     <div id="count">    
+                    <div id="count">
                         <p id="num"></p>
                     </div>
-                    <p class="count-label">count</p>                 
+                    <p class="count-label">count</p>
                 </div>
+            </div>
+            <div class="start-win-panel">
+                <p id="startWin">Start</p>
             </div>
         </div>
     </div>

@@ -147,6 +147,25 @@ a:link, a:visited {
     color: green;
 }
 
+.start-win-panel {
+    display: none;
+    position: relative;
+    top: 300px;
+    left: 110px;
+}
+
+#startWin {
+    background-color: maroon;
+    color: white;
+    height: 40px;
+    width: 70px;
+    padding-top: 10px;
+    padding-left: 10px;
+    border-radius: 3px;
+    -webkit-box-shadow: 1px 1px 2px 4px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    1px 1px 2px 4px #ccc; /* Firefox 3.5 - 3.6 */
+     box-shadow:         1px 1px 2px 4px #ccc;
+}
 
 @media only screen and (max-width: 420px) { /*iphone 6 plus */
   .game{
