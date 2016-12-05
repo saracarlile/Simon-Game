@@ -19,19 +19,19 @@ function  determineHighlightColor(color){
     switch(color){
         case 'green':
         document.getElementById('control-top-left').style.backgroundColor = 'lime';
-        setTimeout(function(){  document.getElementById('control-top-left').style.backgroundColor = '#00691C'; }, 3000);
+        setTimeout(function(){  document.getElementById('control-top-left').style.backgroundColor = '#00691C'; }, 1000);
         break;
         case 'red':
         document.getElementById('control-top-right').style.backgroundColor = 'red';
-        setTimeout(function(){  document.getElementById('control-top-left').style.backgroundColor = '#7D0000'; }, 3000);
+        setTimeout(function(){  document.getElementById('control-top-right').style.backgroundColor = '#7D0000'; }, 1000);
         break;
         case 'blue':
         document.getElementById('control-bottom-right').style.backgroundColor = 'blue';
-        setTimeout(function(){ document.getElementById('control-bottom-right').style.backgroundColor = '#001691'; }, 3000);
+        setTimeout(function(){ document.getElementById('control-bottom-right').style.backgroundColor = '#001691'; }, 1000);
         break;
         case 'yellow':
-       document.getElementById('control-bottom-left').style.backgroundColor = '#ffff80';
-        setTimeout(function(){ document.getElementById('control-bottom-left').style.backgroundColor = '#DEDC5F'; }, 3000);
+        document.getElementById('control-bottom-left').style.backgroundColor = '#FCFC00';
+        setTimeout(function(){ document.getElementById('control-bottom-left').style.backgroundColor = '#DEDC5F'; }, 1000);
         default:
         console.log(color);   
     }
@@ -47,7 +47,7 @@ function newGame(){
 }
 
 function computerMove(){
-    var select = Math.floor((Math.random() * 4) + 1);
+    var select = Math.floor(Math.random() * (3-0 + 1) + 0);
     var compColor = game.colors[select];
     console.log(compColor);
     game.computer.push(game.colors[select]);
@@ -93,3 +93,7 @@ $(document).ready(function () {
 
 
 });
+
+
+
+//Math.floor(Math.random() * (num2-num1 + 1) + num1)......num1 = 0 and num2 = 3 random num btw 0-3 

@@ -49,7 +49,7 @@ body {
 }
 
 #control-bottom-left {
-    background-color: #DEDC5F;
+    background-color: #FAFAB4;
     border-bottom-left-radius: 300px;
     position: relative;
     top: -217px;
@@ -127,22 +127,10 @@ body {
 
 }
 .yellow {
-    color: #DEDC5F;
+    color: #FAFAB4;
 }
 
-.light-green {
-     background-color: lime;
-}
-.light-red {
-     background-color: red;
-}
-.light-blue {
-     background-color: blue;
-}
-.light-yellow {
-     background-color: #ffff80;
 
-}
 
 a:link, a:visited { 
     text-decoration: none;
