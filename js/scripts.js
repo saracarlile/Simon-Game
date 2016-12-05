@@ -19,19 +19,19 @@ function  determineHighlightColor(color){
     switch(color){
         case 'green':
         document.getElementById('control-top-left').style.backgroundColor = 'lime';
-        setTimeout(function(){  document.getElementById('control-top-left').style.backgroundColor = '#00691C'; }, 1000);
+        setTimeout(function(){  document.getElementById('control-top-left').style.backgroundColor = '#00691C'; }, 500);
         break;
         case 'red':
         document.getElementById('control-top-right').style.backgroundColor = 'red';
-        setTimeout(function(){  document.getElementById('control-top-right').style.backgroundColor = '#7D0000'; }, 1000);
+        setTimeout(function(){  document.getElementById('control-top-right').style.backgroundColor = '#7D0000'; }, 500);
         break;
         case 'blue':
         document.getElementById('control-bottom-right').style.backgroundColor = 'blue';
-        setTimeout(function(){ document.getElementById('control-bottom-right').style.backgroundColor = '#001691'; }, 1000);
+        setTimeout(function(){ document.getElementById('control-bottom-right').style.backgroundColor = '#001691'; }, 500);
         break;
         case 'yellow':
         document.getElementById('control-bottom-left').style.backgroundColor = '#FCFC00';
-        setTimeout(function(){ document.getElementById('control-bottom-left').style.backgroundColor = '#DEDC5F'; }, 1000);
+        setTimeout(function(){ document.getElementById('control-bottom-left').style.backgroundColor = '#DEDC5F'; }, 500);
         default:
         console.log(color);   
     }
