@@ -1,4 +1,3 @@
-
 var game = {
   count: 0,
   colors: ['green', 'red', 'blue', 'yellow'],
@@ -13,6 +12,33 @@ var game = {
   strictMode: false,
 }
 
+
+
+function  determineHighlightColor(color){
+    console.log(color + ' HIGHLIGHT CLASS FUNCTION');
+    switch(color){
+        case 'green':
+        document.getElementById('control-top-left').style.backgroundColor = 'lime';
+        setTimeout(function(){  document.getElementById('control-top-left').style.backgroundColor = '#00691C'; }, 3000);
+        break;
+        case 'red':
+        document.getElementById('control-top-right').style.backgroundColor = 'red';
+        setTimeout(function(){  document.getElementById('control-top-left').style.backgroundColor = '#7D0000'; }, 3000);
+        break;
+        case 'blue':
+        document.getElementById('control-bottom-right').style.backgroundColor = 'blue';
+        setTimeout(function(){ document.getElementById('control-bottom-right').style.backgroundColor = '#001691'; }, 3000);
+        break;
+        case 'yellow':
+       document.getElementById('control-bottom-left').style.backgroundColor = '#ffff80';
+        setTimeout(function(){ document.getElementById('control-bottom-left').style.backgroundColor = '#DEDC5F'; }, 3000);
+        default:
+        console.log(color);   
+    }
+}
+
+
+
 function newGame(){
     game.count = 0;
     game.computer = [];
@@ -26,13 +52,9 @@ function computerMove(){
     console.log(compColor);
     game.computer.push(game.colors[select]);
     game.sound[compColor].play();
+    console.log(game.computer);
+    determineHighlightColor(compColor);  // 'add color to board'    
 }
-
-
-
-
-
-
 
 
 
@@ -59,17 +81,15 @@ $(document).ready(function () {
     });
     $('#startWin').click(function () {
         $('.start-win-panel').hide();
+        computerMove();
     });
 
     var green = $("#control-top-left").data("color");
     console.log(green);
 
-    $('#control-top-left').click(computerMove);
+  //  $('#control-top-left').click(computerMove);
 
 
 
 
 });
-
-
-//https://medium.com/front-end-hacking/create-simon-game-in-javascript-d53b474a7416#.psrjgd2qu

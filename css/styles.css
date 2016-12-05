@@ -124,9 +124,24 @@ body {
 }
 .blue {
     color: #001691;
+
 }
 .yellow {
     color: #DEDC5F;
+}
+
+.light-green {
+     background-color: lime;
+}
+.light-red {
+     background-color: red;
+}
+.light-blue {
+     background-color: blue;
+}
+.light-yellow {
+     background-color: #ffff80;
+
 }
 
 a:link, a:visited { 
