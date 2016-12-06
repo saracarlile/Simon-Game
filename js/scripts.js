@@ -16,31 +16,58 @@ var game = {
 
 
 function determineHighlightColor(color) {
-    console.log(color + ' HIGHLIGHT CLASS FUNCTION');
     switch (color) {
         case 'green':
             document.getElementById('control-top-left').style.backgroundColor = 'lime';
+            game.sound.green.play();
             setTimeout(function () { document.getElementById('control-top-left').style.backgroundColor = '#00691C'; }, 500);
             break;
         case 'red':
             document.getElementById('control-top-right').style.backgroundColor = 'red';
+            game.sound.red.play();
             setTimeout(function () { document.getElementById('control-top-right').style.backgroundColor = '#7D0000'; }, 500);
             break;
         case 'blue':
             document.getElementById('control-bottom-right').style.backgroundColor = 'blue';
+            game.sound.blue.play();
             setTimeout(function () { document.getElementById('control-bottom-right').style.backgroundColor = '#001691'; }, 500);
             break;
         case 'yellow':
             document.getElementById('control-bottom-left').style.backgroundColor = '#FCFC00';
+            game.sound.yellow.play();
             setTimeout(function () { document.getElementById('control-bottom-left').style.backgroundColor = '#DEDC5F'; }, 500);
-        default:
-            console.log(color);
     }
+}
+
+function computerMove() {
+    var select = Math.floor(Math.random() * (3 - 0 + 1) + 0);
+    var compColor = game.colors[select];
+    game.computer.push(game.colors[select]);
+    determineHighlightColor(compColor);  // 'add color to board' 
+    game.playerTurn = true;
+}
+
+function nextComputerMove() {
+
+}
+
+
+function compareMoves(){   //compare game and player arrays
+    console.log(game.computer);
+    console.log(game.player);
+     setTimeout(function () { 
+         game.playerTurn = false;
+         nextComputerMove();
+         $('#num').text('1');
+         }, 1000);
 }
 
 function playerMove(color) {
     determineHighlightColor(color);
+    game.player.push(color);
+    compareMoves();
 }
+
 
 
 
@@ -51,16 +78,6 @@ function newGame() {
     game.strictMode = false;
 }
 
-function computerMove() {
-    var select = Math.floor(Math.random() * (3 - 0 + 1) + 0);
-    var compColor = game.colors[select];
-    console.log(compColor);
-    game.computer.push(game.colors[select]);
-    game.sound[compColor].play();
-    console.log(game.computer);
-    determineHighlightColor(compColor);  // 'add color to board' 
-    game.playerTurn = true;
-}
 
 
 
@@ -93,7 +110,6 @@ $(document).ready(function () {
     $('.controls').click(function (e) {
         if (game.playerTurn === true) {
             var selection = $(this).attr("data-color");
-            console.log(selection + "!!!!!!");
             playerMove(selection);
         }
         else {
