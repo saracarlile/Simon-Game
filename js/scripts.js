@@ -1,7 +1,7 @@
 var game = {
     count: 0,
     colors: ['green', 'red', 'blue', 'yellow'],
-    computer: [],
+    computer: ['green', 'red', 'blue', 'yellow'],
     player: [],
     sound: {
         green: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
@@ -13,6 +13,12 @@ var game = {
     playerTurn: false
 }
 
+function newGame() {
+    game.count = 0;
+    game.computer = [];
+    game.player = [];
+    game.strictMode = false;
+}
 
 
 function determineHighlightColor(color) {
@@ -39,11 +45,32 @@ function determineHighlightColor(color) {
     }
 }
 
+function playSequence() {
+    var speed = 1000;
+
+    // init timer and stores it's identifier so it can be unset later
+    var timer = setInterval(playSeq, speed);
+
+    var colors = game.computer;
+    var length = game.computer.length;
+
+    var index = 0;
+    function playSeq() {
+        determineHighlightColor(colors[index]);
+        index++;
+        // remove timer after interating through all colors
+        if (index >= length) {
+            clearInterval(timer);
+        }
+    }
+
+}
+
 function computerMove() {
     var select = Math.floor(Math.random() * (3 - 0 + 1) + 0);
     var compColor = game.colors[select];
     game.computer.push(game.colors[select]);
-    determineHighlightColor(compColor);  // 'add color to board' 
+    playSequence();  // play computer array colors
     game.playerTurn = true;
 }
 
@@ -52,14 +79,8 @@ function nextComputerMove() {
 }
 
 
-function compareMoves(){   //compare game and player arrays
-    console.log(game.computer);
-    console.log(game.player);
-     setTimeout(function () { 
-         game.playerTurn = false;
-         nextComputerMove();
-         $('#num').text('1');
-         }, 1000);
+function compareMoves() {   //compare game and player arrays
+
 }
 
 function playerMove(color) {
@@ -69,14 +90,6 @@ function playerMove(color) {
 }
 
 
-
-
-function newGame() {
-    game.count = 0;
-    game.computer = [];
-    game.player = [];
-    game.strictMode = false;
-}
 
 
 
@@ -123,6 +136,8 @@ $(document).ready(function () {
 
 });
 
+//http://stackoverflow.com/questions/1270874/settimeout-inside-each
 
+//https://github.com/Rafase282/My-FreeCodeCamp-Code/wiki/Zipline-Build-a-Simon-Game
 
 //Math.floor(Math.random() * (num2-num1 + 1) + num1)......num1 = 0 and num2 = 3 random num btw 0-3 
