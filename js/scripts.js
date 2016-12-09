@@ -46,7 +46,7 @@ function determineHighlightColor(color) {
 }
 
 function playSequence() {
-    var speed = 850;
+    var speed = 950;
     // init timer and stores it's identifier so it can be unset later
     var timer = setInterval(playSeq, speed);
 
@@ -108,12 +108,11 @@ function compareMoves() {   //compare game and player arrays
         }
     }
     else {  //if player inputs wrong sequence step
-     //   setTimeout(function () {
-    //        $('#num').text('!!');
-   //     }, 300);
+        setTimeout(function () {
+            $('#num').text('!!');
+        }, 300);
         if (game.strictMode === true) {
             setTimeout(function () {
-                $('#num').text('!!');
                 newGame();
                 computerMove();
             }, 2000);
@@ -121,7 +120,6 @@ function compareMoves() {   //compare game and player arrays
         }
         else {
             setTimeout(function () {
-                $('#num').text('!!');
                 $('#num').text(game.count);
                 startRound();
             }, 2000);
@@ -152,6 +150,7 @@ function showThirdPanel() {
 }
 
 function showStartPanel() {
+     $('#num').text('0');
     $('.start-panel').show();
 
 }
