@@ -68,10 +68,10 @@ function playSequence() {
 }
 
 
-function winner(){
-     game.playerTurn = false;
-      $('#num').text(game.count);
-      $('.win-panel').show();
+function winner() {
+    game.playerTurn = false;
+    $('#num').text(game.count);
+    $('.win-panel').show();
 }
 
 function startRound() {
@@ -92,9 +92,9 @@ function compareMoves() {   //compare game and player arrays
     var compArrLength = game.computer.length;
     var playerArrLength = game.player.length;
     if (game.player[game.player.length - 1] === game.computer[game.player.length - 1]) {  //if player inputs right sequence step
-        console.log('match!');
         if (playerArrLength === compArrLength) {  //start new round and check win condition if array lengths match
             console.log('Start new round!');
+             console.log(game.computer);
             game.count += 1;
             if (game.count === 20) {   //check for win condition
                 winner(); //player won
@@ -108,17 +108,26 @@ function compareMoves() {   //compare game and player arrays
         }
     }
     else {  //if player inputs wrong sequence step
-        setTimeout(function () {
-            $('#num').text('!!');
-        }, 300);
-        setTimeout(function () {
-            $('#num').text(game.count);
-            startRound();
-        }, 2000);
+     //   setTimeout(function () {
+    //        $('#num').text('!!');
+   //     }, 300);
+        if (game.strictMode === true) {
+            setTimeout(function () {
+                $('#num').text('!!');
+                newGame();
+                computerMove();
+            }, 2000);
 
+        }
+        else {
+            setTimeout(function () {
+                $('#num').text('!!');
+                $('#num').text(game.count);
+                startRound();
+            }, 2000);
+
+        }
     }
-
-
 
 }
 
