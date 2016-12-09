@@ -60,14 +60,15 @@ function playSequence() {
         // remove timer after interating through all colors
         if (index >= length) {
             clearInterval(timer);
+            game.playerTurn = true;  //enable click event on .controls so player can play
         }
     }
+
 
 }
 
 function startRound() {
     playSequence(); // play computer array colors
-    game.playerTurn = true;
     game.player = [];
 }
 
