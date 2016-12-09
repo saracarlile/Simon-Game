@@ -70,8 +70,6 @@ function playSequence() {
 
 function winner() {
     game.playerTurn = false;
-    $('#num').text(game.count);
-    $('.reset-panel').hide();
     $('.win-panel').show();
 }
 
@@ -98,6 +96,7 @@ function compareMoves() {   //compare game and player arrays
              console.log(game.computer);
             game.count += 1;
             if (game.count === 21) {   //check for win condition
+                $('.reset-panel').hide();
                 winner(); //player won
             }
             else {
@@ -152,7 +151,7 @@ function showThirdPanel() {
 }
 
 function showStartPanel() {
-     $('#num').text('0');
+    $('#num').text('0');
     $('.start-panel').show();
 
 }
