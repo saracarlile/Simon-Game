@@ -108,6 +108,7 @@ function compareMoves() {   //compare game and player arrays
         }
     }
     else {  //if player inputs wrong sequence step
+        game.playerTurn = false;
         setTimeout(function () {
             $('#num').text('!!');
         }, 300);
