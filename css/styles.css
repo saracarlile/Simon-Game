@@ -181,7 +181,7 @@ a:link, a:visited {
   .game{
       margin-left: 60px;
   }
-  .start-panel{
+  .start-panel, .win-panel{
       left: 160px;
   }
 }
@@ -190,7 +190,7 @@ a:link, a:visited {
   .game{
       margin-left: 36px;
   }
-  .start-panel{
+  .start-panel, .win-panel{
       left: 139px;
   }
 }
@@ -199,7 +199,7 @@ a:link, a:visited {
     .game{
       margin-left: 30px;
   }
-  .start-panel{
+  .start-panel, .win-panel{
       left: 129px;
   }
 }
@@ -208,7 +208,7 @@ a:link, a:visited {
     .game{
       margin-left: 5px;
   }
-  .start-panel{
+  .start-panel, .win-panel{
       left: 109px;
   }
 }
