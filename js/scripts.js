@@ -71,6 +71,7 @@ function playSequence() {
 function winner() {
     game.playerTurn = false;
     $('#num').text(game.count);
+    $('.reset-panel').hide();
     $('.win-panel').show();
 }
 
