@@ -49,7 +49,7 @@ body {
 }
 
 #control-bottom-left {
-    background-color: #FAFAB4;
+    background-color: rgb(222, 220, 95);
     border-bottom-left-radius: 300px;
     position: relative;
     top: -217px;
