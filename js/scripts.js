@@ -93,7 +93,7 @@ function compareMoves() {   //compare game and player arrays
     if (game.player[game.player.length - 1] === game.computer[game.player.length - 1]) {  //if player inputs right sequence step
         if (playerArrLength === compArrLength) {  //start new round and check win condition if array lengths match
             console.log('Start new round!');
-             console.log(game.computer);
+            console.log(game.computer);
             game.count += 1;
             if (game.count === 21) {   //check for win condition
                 $('.reset-panel').hide();
@@ -182,15 +182,16 @@ $(document).ready(function () {
         computerMove();
     });
 
-     $('#reset').click(function () {
-          if (game.playerTurn === true) {
-         game.playerTurn === false;
-        newGame();
-        computerMove();
+    $('#reset').click(function () {
+        if (game.playerTurn === true) {
+            game.playerTurn === false;
+            newGame();
+            computerMove();
         }
         else {
             e.preventDefault();
         }
+
     });
 
     $('.controls').click(function (e) {
