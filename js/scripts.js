@@ -112,7 +112,7 @@ function compareMoves() {   //compare game and player arrays
         setTimeout(function () {
             $('#num').text('!!');
         }, 300);
-        if (game.strictMode === true) {
+        if (game.strictMode === true) {  //if strict mode is on reset game
             setTimeout(function () {
                 newGame();
                 computerMove();
@@ -120,7 +120,7 @@ function compareMoves() {   //compare game and player arrays
 
         }
         else {
-            setTimeout(function () {
+            setTimeout(function () {   // if strict mode is off restart round/replay sequence
                 $('#num').text(game.count);
                 startRound();
             }, 2000);
