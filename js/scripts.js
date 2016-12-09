@@ -14,7 +14,7 @@ var game = {
 }
 
 function newGame() {
-    game.count = 0;
+    game.count = 1;
     $('#num').text(game.count);
     game.computer = [];
     game.player = [];
@@ -96,7 +96,7 @@ function compareMoves() {   //compare game and player arrays
             console.log('Start new round!');
              console.log(game.computer);
             game.count += 1;
-            if (game.count === 20) {   //check for win condition
+            if (game.count === 21) {   //check for win condition
                 winner(); //player won
             }
             else {
