@@ -183,9 +183,14 @@ $(document).ready(function () {
     });
 
      $('#reset').click(function () {
+          if (game.playerTurn === true) {
          game.playerTurn === false;
         newGame();
         computerMove();
+        }
+        else {
+            e.preventDefault();
+        }
     });
 
     $('.controls').click(function (e) {
