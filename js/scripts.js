@@ -177,6 +177,12 @@ $(document).ready(function () {
 
     $('#start').click(function () {
         $('.start-panel').hide();
+        $('.reset-panel').show();
+        newGame();
+        computerMove();
+    });
+
+     $('#reset').click(function () {
         newGame();
         computerMove();
     });
