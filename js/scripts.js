@@ -83,18 +83,29 @@ function computerMove() {
 function compareMoves() {   //compare game and player arrays
     var compArrLength = game.computer.length;
     var playerArrLength = game.player.length;
-    if (game.player[game.player.length - 1] === game.computer[game.player.length - 1]) {
+    if (game.player[game.player.length - 1] === game.computer[game.player.length - 1]) {  //if player inputs right sequence step
         console.log('match!');
+        if (playerArrLength === compArrLength) {  //start new round and check win condition if array lengths match
+            console.log('Start new round!');
+            game.count += 1;
+            setTimeout(function () {
+                $('#num').text(game.count);
+                computerMove();
+            }, 1000);
+
+        }
     }
-    if (playerArrLength === compArrLength) {  //start new round and check win condition
-        console.log('Start new round!');
-        game.count += 1;
+    else {  //if player inputs wrong sequence step
+        setTimeout(function () {
+            $('#num').text('!!');
+        }, 300);
         setTimeout(function () {
             $('#num').text(game.count);
-            computerMove();
-        }, 1000)
+            startRound();
+        }, 2000);
 
     }
+
 
 
 }
@@ -102,8 +113,6 @@ function compareMoves() {   //compare game and player arrays
 function playerMove(color) {
     determineHighlightColor(color);
     game.player.push(color);
-    console.log(game.player);
-    console.log(game.computer);
     compareMoves();
 }
 
@@ -156,6 +165,5 @@ $(document).ready(function () {
 
 
 
-//https://github.com/Rafase282/My-FreeCodeCamp-Code/wiki/Zipline-Build-a-Simon-Game
 
 //Math.floor(Math.random() * (num2-num1 + 1) + num1)......num1 = 0 and num2 = 3 random num btw 0-3 
