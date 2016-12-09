@@ -67,6 +67,13 @@ function playSequence() {
 
 }
 
+
+function winner(){
+     game.playerTurn = false;
+      $('#num').text(game.count);
+      $('.win-panel').show();
+}
+
 function startRound() {
     playSequence(); // play computer array colors
     game.player = [];
@@ -89,11 +96,15 @@ function compareMoves() {   //compare game and player arrays
         if (playerArrLength === compArrLength) {  //start new round and check win condition if array lengths match
             console.log('Start new round!');
             game.count += 1;
-            setTimeout(function () {
-                $('#num').text(game.count);
-                computerMove();
-            }, 1000);
-
+            if (game.count === 20) {   //check for win condition
+                winner(); //player won
+            }
+            else {
+                setTimeout(function () {
+                    $('#num').text(game.count);
+                    computerMove();
+                }, 1000);
+            }
         }
     }
     else {  //if player inputs wrong sequence step
@@ -127,7 +138,12 @@ function showSecondPanel() {
     $('.panel-2').show();
 }
 function showThirdPanel() {
-    $('.game, .start-win-panel').show();
+    $('.game, .start-panel').show();
+
+}
+
+function showStartPanel() {
+    $('.start-panel').show();
 
 }
 
@@ -142,8 +158,16 @@ $(document).ready(function () {
         game.strictMode = id === 'strict-mode-selection' ? true : false; // if Strict Mode strictMode is true
         $('.panel-2').hide('drop', { direction: 'left' }, 1000, showThirdPanel);
     });
-    $('#startWin').click(function () {
-        $('.start-win-panel').hide();
+
+    $('.win-panel a').click(function () {
+        var id = this.id;
+        game.strictMode = id === 'resetStrictMode' ? true : false; // if Strict Mode strictMode is true (game reset)
+        $('.win-panel').hide('drop', { direction: 'left' }, 1000, showStartPanel);
+    });
+
+
+    $('#start').click(function () {
+        $('.start-panel').hide();
         newGame();
         computerMove();
     });

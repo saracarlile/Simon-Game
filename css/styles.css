@@ -150,14 +150,21 @@ a:link, a:visited {
     color: #00691C;
 }
 
-.start-win-panel {
+.start-panel {
     display: none;
     position: relative;
     top: 320px;
     left: 102px;
 }
 
-#startWin {
+.win-panel{
+    display: none;
+    position: relative;
+    top: 320px;
+    left: 102px;
+}
+
+#start {
     background-color: #7D0000;
     color: white;
     height: 40px;
