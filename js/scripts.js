@@ -1,7 +1,7 @@
 var game = {
     count: 0,
     colors: ['green', 'red', 'blue', 'yellow'],
-    computer: ['green', 'red', 'blue', 'yellow'],
+    computer: [],
     player: [],
     sound: {
         green: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
@@ -15,9 +15,9 @@ var game = {
 
 function newGame() {
     game.count = 0;
+    $('#num').text(game.count);
     game.computer = [];
     game.player = [];
-    game.strictMode = false;
 }
 
 
@@ -46,17 +46,16 @@ function determineHighlightColor(color) {
 }
 
 function playSequence() {
-    var speed = 1000;
-
+    var speed = 850;
     // init timer and stores it's identifier so it can be unset later
     var timer = setInterval(playSeq, speed);
 
     var colors = game.computer;
     var length = game.computer.length;
-
     var index = 0;
+
     function playSeq() {
-        determineHighlightColor(colors[index]);
+        determineHighlightColor(colors[index]);  // play colors in computer array
         index++;
         // remove timer after interating through all colors
         if (index >= length) {
@@ -66,26 +65,45 @@ function playSequence() {
 
 }
 
+function startRound() {
+    playSequence(); // play computer array colors
+    game.playerTurn = true;
+    game.player = [];
+}
+
 function computerMove() {
+    game.playerTurn = false;
     var select = Math.floor(Math.random() * (3 - 0 + 1) + 0);
     var compColor = game.colors[select];
     game.computer.push(game.colors[select]);
-    playSequence();  // play computer array colors
-    game.playerTurn = true;
-}
-
-function nextComputerMove() {
-
+    startRound();
 }
 
 
 function compareMoves() {   //compare game and player arrays
+    var compArrLength = game.computer.length;
+    var playerArrLength = game.player.length;
+    if (game.player[game.player.length - 1] === game.computer[game.player.length - 1]) {
+        console.log('match!');
+    }
+    if (playerArrLength === compArrLength) {  //start new round and check win condition
+        console.log('Start new round!');
+        game.count += 1;
+        setTimeout(function () {
+            $('#num').text(game.count);
+            computerMove();
+        }, 1000)
+
+    }
+
 
 }
 
 function playerMove(color) {
     determineHighlightColor(color);
     game.player.push(color);
+    console.log(game.player);
+    console.log(game.computer);
     compareMoves();
 }
 
@@ -103,7 +121,6 @@ function showThirdPanel() {
 
 }
 
-
 $(document).ready(function () {
 
     $('.panel-1 a').click(function () {
@@ -117,6 +134,7 @@ $(document).ready(function () {
     });
     $('#startWin').click(function () {
         $('.start-win-panel').hide();
+        newGame();
         computerMove();
     });
 
@@ -136,7 +154,7 @@ $(document).ready(function () {
 
 });
 
-//http://stackoverflow.com/questions/1270874/settimeout-inside-each
+
 
 //https://github.com/Rafase282/My-FreeCodeCamp-Code/wiki/Zipline-Build-a-Simon-Game
 
